@@ -1,0 +1,25 @@
+# Make Sure you Ignore the node_modules directory
+/node_modules/
+.idea
+
+
+# macOS system files
+.DS_Store
+
+# Environment files
+/config/
+/src/config/
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+debug.log*
+
+Personal text files and ideas
+.txt
+scratchpad.txt
