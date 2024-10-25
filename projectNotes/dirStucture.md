@@ -2,7 +2,7 @@ miniFilm/
 ├── client/                 // Frontend React application
 │   ├── public/             // Public files
 │   ├── src/
-│   │   ├── 
+│   │   ├──  
 │   │   ├── index.js        // Entry point for React
 │   │   └── ...             // Other components and assets
 ├── server/                 // Backend Node.js/Express application
