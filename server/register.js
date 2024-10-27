@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const User = require('../models/User'); // Adjust the path as necessary
+const User = require('../models/User'); // The MongoDB database objects
 const bcryptjs = require('bcryptjs');
-const { registerValidation } = require('./validations/validation'); // Adjust the path as necessary
+const { registerValidation } = require('./validations/validation');
 
 router.post('/', async (req, res) => {
     console.log(req.body);

@@ -2,7 +2,7 @@
 
 const express = require('express');
 const router = express.Router();
-const User = require('../models/User'); // Adjust the path as necessary
+const User = require('../models/User'); // The MongoDB database objects
 const { loginValidation } = require('./validations/validation');
 const bcryptjs = require('bcryptjs');
 const jsonwebtoken = require('jsonwebtoken');
@@ -10,6 +10,7 @@ const jsonwebtoken = require('jsonwebtoken');
 router.post('/', async (req, res) => {
     console.log(req.body);
 
+    // TODO Client-side validation
     // Validation 1 to check user input
     // const { error } = loginValidation(req.body);
     // if (error) {

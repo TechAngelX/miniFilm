@@ -1,12 +1,12 @@
 {
   "name": "minifilm",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "main": "index.js",
   "scripts": {
     "start": "nodemon server/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Ricki Angel (acknowledgement to Dr. Stelios Sotiriadis Bikbeck, University of London.",
   "license": "ISC",
   "description": "",
   "dependencies": {
