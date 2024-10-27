@@ -12,7 +12,7 @@
 .env.development.local
 .env.test.local
 .env.production.local
-.env  # Make sure to ignore the .env file
+.env  # Ensure to ignore the .env file
 
 # Log files
 npm-debug.log*
