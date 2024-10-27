@@ -1,6 +1,6 @@
 # miniFilm
 
-### :sparkles: VERSION 2.* :sparkles:
+### :sparkles: VERSION 2.0:sparkles:
 **Adds a simple front-end login or registration page (for those who don't wanna use Postman)**
 
 <div style="display: flex; justify-content: center; gap: 10px;">
@@ -9,10 +9,7 @@
 <img src="images/screenshot3.png" style="border: 5px solid #ccc; width: 30%;">
 </div>
 
-
-
-
-miniFilm is a test application for managing users and a film library, serving as foundational building blocks for any user registration, login, and OAuth 2.0 API setup. Built with **Node.js**, **Express**, **MongoDB**, and **JWT**, this app provides secure user authentication and full CRUD functionality.
+**miniFilm** is a test application for managing users and a film library, serving as foundational building blocks for any user registration, login, and OAuth 2.0 API setup. Built with **Node.js**, **Express**, **MongoDB**, and **JWT**, this app provides secure user authentication and full CRUD functionality.
 ## Features
 
 - **User Management**: Secure registration, login, and JWT-based authentication for users.
@@ -23,6 +20,9 @@ miniFilm is a test application for managing users and a film library, serving as
 - **Protected API Routes**: Film data access is secured via JWT verification.
 - **Postman Testing**: Front-Endless design. Quickly test routes and verification features using Postman.
 - **Protected API Routes**: Film data access is secured via JWT verification.
+- **New Feature**: Now features a simple login and registration page, independent of the auth/Postman setup.
+
+// TODO: Implement client-side basic form validation
 
 This project is a practical guide to developing RESTful APIs with user authentication, validation, and basic OAuth 2.0 compatibility.
 # Environment Variables Setup
