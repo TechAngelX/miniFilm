@@ -1,5 +1,17 @@
 # miniFilm
 
+### :sparkles: VERSION 2.* :sparkles:
+**Adds a simple front-end login or registration page (for those who don't wanna use Postman)**
+
+<div style="display: flex; justify-content: center; gap: 10px;">
+<img src="images/screenshot2.png" style="border: 5px solid #ccc; width: 30%;">
+<img src="images/screenshot1.png" style="border: 5px solid #ccc; width: 30%;">
+<img src="images/screenshot3.png" style="border: 5px solid #ccc; width: 30%;">
+</div>
+
+
+
+
 miniFilm is a test application for managing users and a film library, serving as foundational building blocks for any user registration, login, and OAuth 2.0 API setup. Built with **Node.js**, **Express**, **MongoDB**, and **JWT**, this app provides secure user authentication and full CRUD functionality.
 ## Features
 

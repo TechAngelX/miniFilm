@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>miniFilm Login</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="styles/styles.css"> <!-- Link to your CSS file -->
+    <style>
+        body {
+            background-color: #f8f9fa; /* Light background */
+        }
+        .wrapper {
+            width: 100%;
+            margin: auto;
+            max-width: 400px;
+            margin-top: 100px;
+        }
+        #formContent {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        .fadeIn {
+            opacity: 1;
+        }
+        input[type="text"],
+        input[type="password"] {
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        #formFooter {
+            margin-top: 15px;
+            text-align: center;
+        }
+        .sign-up-link {
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <!-- Icon -->
+        <div class="fadeIn first text-center">
+            <h4><b>Welcome to miniFilm</b></h4>
+        </div>
+
+        <!-- Login Form -->
+        <form id="loginForm" onsubmit="return submitLoginForm(event)">
+            <input type="text" id="username" class="fadeIn second form-control" name="username" placeholder="Enter Username" required>
+            <input type="password" id="password" class="fadeIn third form-control" name="password" placeholder="Password" required>
+            <input type="submit" class="fadeIn fourth btn btn-primary btn-block" value="Log In">
+
+            <!-- Sign Up Link -->
+            <div class="sign-up-link">
+                <a href="register.html">Need to Sign Up?</a>
+            </div>
+        </form>
+
+        <!-- Remind Password -->
+        <div id="formFooter">
+            <a class="underlineHover" href="#">Forgot Password?</a>
+        </div>
+    </div>
+</div>
+<script>
+    async function submitLoginForm(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        try {
+            const response = await fetch('/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ username: username, password: password }) // Send username and password
+            });
+
+            const data = await response.json();
+            if (response.ok) {
+                console.log('Login successful:', data);
+                // Redirect directly to the welcome page
+                window.location.href = 'welcome.html';
+            } else {
+                console.error('Login failed:', data.message);
+                alert(data.message); // Show error message
+            }
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    }
+</script>
+</body>
+</html>
