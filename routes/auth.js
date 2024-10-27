@@ -62,11 +62,12 @@ router.post('/login', async (req, res) => {
         return res.status(400).send({ message: 'User does not exist' });
     }
 
-    // Validation 3 to check user password
-    const passwordValidation = await bcryptjs.compare(req.body.password, user.password);
+    // Validation 3 to check user password er.password);
+    const passwordValidation = await bcryptjs.compare(req.body.password, user.password)
     if (!passwordValidation) {
         return res.status(400).send({ message: 'Password is wrong' });
     }
+    res.send('SUCCESS !!!')
 
     // Generate an auth-token
     const token = jsonwebtoken.sign({ _id: user._id }, process.env.TOKEN_SECRET);
