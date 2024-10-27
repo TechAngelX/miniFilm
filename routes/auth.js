@@ -67,7 +67,7 @@ router.post('/login', async (req, res) => {
     if (!passwordValidation) {
         return res.status(400).send({ message: 'Password is wrong' });
     }
-    res.send('SUCCESS !!!')
+    // res.send('SUCCESS !!!')
 
     // Generate an auth-token
     const token = jsonwebtoken.sign({ _id: user._id }, process.env.TOKEN_SECRET);
