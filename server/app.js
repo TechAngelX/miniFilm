@@ -2,15 +2,13 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const path = require('path'); // Import path module
-const User = require('../models/User'); // This is correct
-
+const auth = require('../routes/auth');
 require('dotenv').config({ path: './config/.env' }); // Load environment variables from .env file
 
-const app = express();
-app.use(bodyParser.json()); // Middleware to parse JSON bodies
+const app = express(); // Initialize Express app
 
-// Serve static files from the public directory
-app.use(express.static(path.join(__dirname, '../public'))); // Updated path
+app.use(bodyParser.json()); // Middleware to parse JSON bodies
+app.use(express.static(path.join(__dirname, '../public'))); // Serve static files from the public directory
 
 // Connect to MongoDB
 mongoose.connect(process.env.DB_CONNECTOR, {
@@ -25,25 +23,24 @@ mongoose.connect(process.env.DB_CONNECTOR, {
         console.error('Failed to connect to MongoDB:', err.message);
     });
 
+// Welcome page route protected by auth middleware
+app.get('/welcome', auth, (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/welcome.html'));
+});
+
 // Define the root route to serve the login.html file
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../public/index.html')); // Updated path
 });
-// Define a specific route for /index if needed
-app.get('/index', (req, res) => {
-    res.sendFile(path.join(__dirname, '../public/index.html')); // Serve the same welcome page
-});
-
 
 // Import routes
 const filmsRoute = require('../routes/films');
-const authRoute = require('../routes/auth');  // Existing auth route
 const registerRoute = require('./register');   // New register route
 const loginRoute = require('./login');         // New login route
 
 // Use routes
 app.use('/api/film', filmsRoute);
-app.use('/api/auth', authRoute);  // Keep the existing auth route if needed
+app.use('/api/auth', auth);  // Keep the existing auth route
 app.use('/register', registerRoute);  // Use the new register route
 app.use('/login', loginRoute);        // Use the new login route
 

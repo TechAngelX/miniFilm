@@ -78,6 +78,7 @@
         </div>
     </div>
 </div>
+
 <script>
     async function submitLoginForm(event) {
         event.preventDefault(); // Prevent the default form submission
@@ -97,14 +98,15 @@
             const data = await response.json();
             if (response.ok) {
                 console.log('Login successful:', data);
-                // Redirect directly to the welcome page
-                window.location.href = 'welcome.html';
+                localStorage.setItem('token', data['auth-token']); // Store token in local storage
+                window.location.href = 'welcome.html'; // Redirect to the welcome page
             } else {
                 console.error('Login failed:', data.message);
                 alert(data.message); // Show error message
             }
         } catch (error) {
             console.error('Error:', error);
+            alert('An unexpected error occurred. Please try again.'); // Inform user of the error
         }
     }
 </script>
