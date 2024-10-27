@@ -2,9 +2,9 @@ const express = require('express')
 const router = express.Router()
 
 const Film = require('../models/Film')
-// const verifyToken = require('../verifyToken')
+const verify = require('../validations/verifyToken')
 
-router.get('/', async(req,res) =>{
+router.get('/', verify, async(req,res) =>{
     try{
         const films = await Film.find()
         res.send(films)
