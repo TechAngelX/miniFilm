@@ -2,7 +2,6 @@
 /node_modules/
 .idea
 
-
 # macOS system files
 .DS_Store
 
@@ -13,13 +12,14 @@
 .env.development.local
 .env.test.local
 .env.production.local
+.env  # Make sure to ignore the .env file
 
-
+# Log files
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 debug.log*
 
-Personal text files and ideas
-.txt
+# Personal text files and ideas
+*.txt
 scratchpad.txt
