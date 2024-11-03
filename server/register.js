@@ -4,7 +4,7 @@ const User = require('../models/User'); // The MongoDB database objects
 const bcryptjs = require('bcryptjs');
 const { registerValidation } = require('./validations/validation');
 
-router.get('/', async (req, res) => {
+router.post('/', async (req, res) => {
     console.log(req.body);
 
     // Validation 1 to check user input
