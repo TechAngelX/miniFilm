@@ -4,3 +4,9 @@ node_modules
 .DS_Store
 npm-debug.log
 
+# Ignore everything in the config directory
+config/*
+
+# Allow the .env file specifically
+!config/.env
+

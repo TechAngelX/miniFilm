@@ -4,6 +4,7 @@ const User = require('../models/User'); // The MongoDB database objects
 const bcryptjs = require('bcryptjs');
 const { registerValidation } = require('./validations/validation');
 
+
 router.post('/', async (req, res) => {
     console.log(req.body);
 
