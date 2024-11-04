@@ -1,4 +1,4 @@
-# miniFilm
+# AuthLogin
 
 ### :sparkles: VERSION 2.0:sparkles:
 **Adds a simple front-end login or registration page (for those who don't wanna use Postman)**
@@ -45,3 +45,4 @@ Bikbeck, University of London
 
 This project is licensed under the ISC License. Feel free to use it as needed, and do drop me a line to know your thoughts.
 
+# AuthLogin
